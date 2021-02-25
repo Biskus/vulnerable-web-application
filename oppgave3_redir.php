@@ -10,7 +10,7 @@
     $username = htmlspecialchars($_POST["username"]);
     $password = htmlspecialchars($_POST["password"]);
     $correct_username = 'admin';
-    $correct_password = 'FlyingBeaverIzAwezum123';
+    $correct_password = '1234567890';
     $correct_password_encrypted = 'Rmx5aW5nQmVhdmVySXpBd2V6dW0xMjM=';
     //error_log(strcmp($username, $correct_username));
     if (strcmp($username, $correct_username) == 0){
@@ -23,7 +23,7 @@
     if(strcmp($password, $correct_password == 0)){
         error_log('Correct password: ' . $password);
         echo 'Success!';
-        header('Location: oppgave2_complete_zjry48fgldo.html');
+        header('Location: oppgave3_complete_khhfyenkfi.html');
         exit;
     }
     echo 'Ikke prøv deg...';
