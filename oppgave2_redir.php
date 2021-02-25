@@ -10,11 +10,12 @@
     $username = htmlspecialchars($_POST["username"]);
     $password = htmlspecialchars($_POST["password"]);
     $correct_username = 'admin';
-    $correct_password = 'HvitTigerErBest123';
+    $correct_password = 'FlyingBeaverIzAwezum123';
+    $correct_password_encrypted = 'Rmx5aW5nQmVhdmVySXpBd2V6dW0xMjM=';
     if (strcmp($username, $correct_password) !== 0 && 
     strcmp($password, $correct_password !== 0)){
         echo 'Success!';
-        header('Location: oppgave1_complete.html');
+        header('Location: oppgave2_complete_zjry48fgldo.html');
         exit;
     }
     echo 'Ikke prøv deg...';
