@@ -11,8 +11,11 @@
     $password = htmlspecialchars($_POST["password"]);
     $correct_username = 'admin';
     $correct_password = 'HvitTigerErBest123';
-    if (strcmp($username, $correct_password) !== 0 && 
-    strcmp($password, $correct_password !== 0)){
+    error_log('1 username: '. $username);
+    error_log('1 password: '. $password);
+    if (strcmp($username, $correct_username) === 0 && 
+    strcmp($password, $correct_password) === 0){
+        error_log('succes '. $password );
         echo 'Success!';
         header('Location: oppgave1_complete.html');
         exit;
