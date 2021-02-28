@@ -20,7 +20,7 @@
         error_log('Incorrect username: '. $username);
         exit;
     }
-    if(strcmp($password, $correct_password == 0)){
+    if(strcmp($password, $correct_password) == 0){
         error_log('Correct password: ' . $password);
         echo 'Success!';
         header('Location: oppgave3_complete_khhfyenkfi.html');
