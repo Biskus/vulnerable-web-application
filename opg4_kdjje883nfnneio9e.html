@@ -19,24 +19,33 @@
         
         
         <div class="grid-page-item">
-            <span >Oppgave: Rullerende rullator</span>
+            <span >Oppgave: Kul koala</span>
         </div>
         <div class="grid-page-item">
-            <span><img style="border-radius: 50px" src="gfx/rullator.png"\></span>
+            <span><img style="border-radius: 50px" src="gfx/cool_koala_transparent.png"\></span>
         </div>
         <div class="grid-page-item">
             <span>
-                Sikkerhetsansvarlig ble kalt inn fra vinterferie fordi systemet
-                ble hacket i forrige oppgave.<br><br>
-                Nå har han oppgradert systemet og er overbevist om at systemet er bombesikkert 
-                fordi han har brukt en ikke-reversibel krypteringsalgoritme. <br><br>
+                Sikkerhetsansvarlig har nå fått oppsigelsesvarsel fordi bedriften har blitt hacket igjen.<br><br>
+                Han har blitt bedt om å aldri igjen bruke svake passord og følge standard regler for passord. <br><br>
+                <ul>
+                    <li>
+                        Minst 8 tegn
+                    </li>
+                    <li>
+                        Minst en stor bokstav
+                    </li>
+                    <li>
+                        Minst ett tall 
+                    </li>
+                </ul>
                 Klarer du å cracke passordet?
             </span>
         </div>
         <div class="grid-page-item">
             <span>
                 <form class="" id="loginForm" 
-                action="oppgave3_redir.php"
+                action="oppgave4_redir.php"
                 method="post"
                 onsubmit="return validateForm()"
                 >
@@ -61,7 +70,7 @@
                             return false;
                         }
                         var md5Hash = CryptoJS.MD5(password);
-                        if (md5Hash.toString() != "e0ee46c9cdf0a705dd103370cb2a4cf8") {
+                        if (md5Hash.toString() != "e468e6e4f41e69958151761eedaabc04") {
                             alert("Feil passord!");
                             return false;
                         }

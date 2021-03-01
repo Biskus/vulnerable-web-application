@@ -19,7 +19,6 @@ def check_password(pw_hash, word):
     if pw_hash == hashlib.md5(word.encode()).hexdigest():
         print('Found password: ' + word)
    
-
 for word in wordlist:
     word = word.strip()
     check_password(md5_hash_to_crack, word)

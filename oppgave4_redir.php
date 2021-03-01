@@ -30,7 +30,7 @@ function getUserIP() {
     $username = htmlspecialchars($_POST["username"]);
     $password = htmlspecialchars($_POST["password"]);
     $correct_username = 'admin';
-    $correct_password = '1234567890';
+    $correct_password = 'Konkurransedyktig123';
     $correct_password_encrypted = 'Rmx5aW5nQmVhdmVySXpBd2V6dW0xMjM=';
     //error_log(strcmp($username, $correct_username));
     if (strcmp($username, $correct_username) == 0){
@@ -44,9 +44,9 @@ function getUserIP() {
         //error_log('Correct password: ' . $password);
         echo 'Success!';
         $IP = getUserIP();
-        error_log('POST opg 3 from IP: '. $IP . ' username: '. $username . ' password: '. $password );
+        error_log('POST opg 4 from IP: '. $IP . ' username: '. $username . ' password: '. $password );
         
-        header('Location: oppgave3_complete_khhfyenkfi.html');
+        header('Location: oppgave4_complete_dfkkai49fi30');
         exit;
     }
     echo 'Ikke prøv deg...';

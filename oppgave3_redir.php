@@ -30,8 +30,8 @@ function getUserIP() {
     $username = htmlspecialchars($_POST["username"]);
     $password = htmlspecialchars($_POST["password"]);
     $correct_username = 'admin';
-    $correct_password = '1234567890';
-    $correct_password_encrypted = 'Rmx5aW5nQmVhdmVySXpBd2V6dW0xMjM=';
+    $correct_password = 'konkurransedyktig';
+    $correct_password_encrypted = 'e0ee46c9cdf0a705dd103370cb2a4cf8';
     //error_log(strcmp($username, $correct_username));
     if (strcmp($username, $correct_username) == 0){
         //error_log('Correct username: '. $username);
