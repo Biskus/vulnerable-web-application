@@ -1,20 +1,28 @@
 import hashlib
-import time
-md5_hash_to_crack = 'e0ee46c9cdf0a705dd103370cb2a4cf8'
 
-def capitalize(string):
-    return string.capitalize()
-wordlist = open('norwegian.txt').readlines()[-30:]
-counter = 0
-start = time.time()
+md5_hash_to_crack = 'e468e6e4f41e69958151761eedaabc04'
+
+wordlist = open('norwegian.txt').readlines()
+
+def check_password(pw_hash, word):
+    #matches the exact word 
+    if pw_hash == hashlib.md5(word.encode()).hexdigest():
+        print('Found password: ' + word)
+
+    #matches capitalized word
+    word = word.capitalize()
+    if pw_hash == hashlib.md5(word.encode()).hexdigest():
+        print('Found password: ' + word)
+    
+    #matches capitalized word + 123
+    word = word + '123'
+    if pw_hash == hashlib.md5(word.encode()).hexdigest():
+        print('Found password: ' + word)
+   
 
 for word in wordlist:
     word = word.strip()
-    print(word.encode('utf-8'))
-    result = hashlib.md5(word.encode()).hexdigest()
-    if result == md5_hash_to_crack:
-        print('Found password: ' + word)
-end = time.time()
-delta = end - start
-print('Searched through ' + str(len(wordlist)) + ' words'+ ' ('+str(delta)+' seconds)')
-print()
+    check_password(md5_hash_to_crack, word)
+
+print('Searched through ' + str(len(wordlist)) + ' words')
+

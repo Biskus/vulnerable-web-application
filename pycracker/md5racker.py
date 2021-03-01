@@ -11,4 +11,3 @@ for word in wordlist:
         print('Found password: ' + word)
 
 print('Searched through ' + str(len(wordlist)) + ' words')
-
