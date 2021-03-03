@@ -44,7 +44,7 @@ function getUserIP() {
         //error_log('Correct password: ' . $password);
         echo 'Success!';
         $IP = getUserIP();
-        error_log('POST opg 4 from IP: '. $IP . ' username: '. $username . ' password: '. $password );
+        error_log('POST opg 6 from IP: '. $IP . ' username: '. $username . ' password: '. $password );
         
         header('Location: oppgave6_complete_superhashman123.html');
         exit;
