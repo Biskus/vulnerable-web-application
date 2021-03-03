@@ -19,30 +19,34 @@
         
         
         <div class="grid-page-item">
-            <span >Oppgave: Sneaky badger</span>
+            <span >Oppgave: Reodors rotator</span>
         </div>
-        
         <div class="grid-page-item">
-                
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/EIyixC9NsLI?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <span><img style="border-radius: 50px" src="gfx/reodor.jpg"\></span>
+        </div>
+        <div class="grid-page-item">
             
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/PNhwNhOXsIk?autoplay=1" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+            autoplay></iframe>
         </div>
         <div class="grid-page-item">
             <span>
-                Sikkerhetsansvarlig har nå fått sparken og bedriften har ansatt en ny og bedre sikkerhetsekspert.<br><br>
-                Den nyansatte har jobbet i mange år som PHP utvikler og tenker at dette burde være null problem. <br><br>
-                Han har flyttet koden vekk fra javascript slik at autentiseringen nå skjer mot en SQL-database. 
-               
-                <br><br>
-                Klarer du å hacke deg inn?
+                Siden den forrige løsningen også ble hacket har firmaet ansatt han gamle sikkerhetsansvarlige igjen<br><br>
+                Han insisterer på å bruke den gamle løsningen, men denne gangen med et mye vanskeligere passord<br><br>
+            
+                Klarer du å cracke det? Det er jo bare en MD5 hash dude LETS GO!
+                <br>
             </span>
         </div>
         <div class="grid-page-item">
             <span>
                 <form class="" id="loginForm" 
-                action="oppgave5_redir.php"
+                action="oppgave6_redir.php"
                 method="post"
-                onsubmit=""
+                onsubmit="return validateForm()"
                 >
                     <input type="text"
                     name="username"
@@ -56,7 +60,22 @@
                     id="loginButton"
                     value="Logg inn">
                 </form>
-                
+                <script type ="text/javascript">
+                    function validateForm() {
+                        var username = document.forms["loginForm"]["username"].value;
+                        var password = document.forms["loginForm"]["password"].value;
+                        if (username != "admin") {
+                            alert("Feil brukernavn!");
+                            return false;
+                        }
+                        var md5Hash = CryptoJS.MD5(password);
+                        if (md5Hash.toString() != "f267890b075a64b07bc46ef9e11d5a19") {
+                            alert("Feil passord!");
+                            return false;
+                        }
+                        return true;
+                        }
+                </script>
             </span>
         </div>
         

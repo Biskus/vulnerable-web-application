@@ -26,44 +26,12 @@ function getUserIP() {
 }
 
 
-/* Database credentials. Assuming you are running MySQL
-server with default setting (user 'root' with no password) */
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'badger');
- 
-/* Attempt to connect to MySQL database */
-//$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
-$mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
-
-if (isset($_POST['username']) && isset($_POST['password']) ){
-    $username = htmlspecialchars($_POST["username"]);
-    $password = htmlspecialchars($_POST["password"]);
-    $sql = "SELECT username,password FROM users WHERE 
-    username ='" . $username . "' AND password='" . $password . "'";
-    $IP = getUserIP();
-    error_log('POST opg 5 from IP: '. $IP . ' username: '. $username . ' password: '. $password );
-
-    //echo $sql;
-    $res = $mysqli->query($sql);
-    for ($row_no = $res->num_rows - 1; $row_no >= 0; $row_no--) {
-        $res->data_seek($row_no);
-        $row = $res->fetch_assoc();
-        error_log('SUCCESS opg 5 from IP: '. $IP . 'success!' );
-        header('Location: oppgave5_complete_llfujuu467fnnvk.html');
-        exit;
-    }
-    echo 'Feil brukernavn eller passord!';
-}
-
-/*
  if (isset($_POST['username']) && isset($_POST['password']) ){
     $username = htmlspecialchars($_POST["username"]);
     $password = htmlspecialchars($_POST["password"]);
     $correct_username = 'admin';
-    $correct_password = 'Konkurransedyktig123';
-    $correct_password_encrypted = 'Rmx5aW5nQmVhdmVySXpBd2V6dW0xMjM=';
+    $correct_password = 'uvedkommende$uvedkommende$';
+    $correct_password_encrypted = 'f267890b075a64b07bc46ef9e11d5a19';
     //error_log(strcmp($username, $correct_username));
     if (strcmp($username, $correct_username) == 0){
         //error_log('Correct username: '. $username);
@@ -78,7 +46,7 @@ if (isset($_POST['username']) && isset($_POST['password']) ){
         $IP = getUserIP();
         error_log('POST opg 4 from IP: '. $IP . ' username: '. $username . ' password: '. $password );
         
-        header('Location: oppgave4_complete_dfkkai49fi30');
+        header('Location: oppgave6_complete_superhashman123.html');
         exit;
     }
     echo 'Ikke prøv deg...';
@@ -89,6 +57,4 @@ if (isset($_POST['username']) && isset($_POST['password']) ){
  }
 //header('Location: http://www.example.com/');
 exit;
-?>
-*/
 ?>
