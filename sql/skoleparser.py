@@ -56,7 +56,7 @@ skoler = import_skoler(url)
 print(skoler)
 
 max = defaultdict(int)
-types = defaultdict(str)
+
 for s in skoler:
     for key, val in vars(s).items():
         try:
@@ -68,7 +68,7 @@ p(max)
 
 #pickle.dump(skoler, open('skoler.pickle','wb'))
 
-
+types = defaultdict(str)
 """
 types['eierform'] = type(s.eierform)
 types['fylke'] = type(s.fylke)

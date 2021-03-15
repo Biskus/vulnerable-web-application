@@ -9,14 +9,14 @@ db = mysql.connector.connect(
   database='utdanning'
 )
 
-print(db)
-
 cursor = db.cursor()
 
 def write_skole_to_db(s, id):
-    sql = "INSERT INTO skole (id, navn, studieplasser, sted, fylke, eierform, koordinater, vigo_kode) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
-    #val = ('1','fauske','123','fauske','nordland','eierform','kordizzy')
-    val = (id, s.navn, s.studieplasser, s.sted, s.fylke, s.eierform, s.koordinater, s.vigo_kode)
+    sql = """INSERT INTO skole (id, navn, studieplasser, 
+    sted, fylke, eierform, koordinater, vigo_kode) 
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"""
+    val = (id, s.navn, s.studieplasser, s.sted, s.fylke, 
+    s.eierform, s.koordinater, s.vigo_kode)
     cursor.execute(sql, val)
 
 for id, s in enumerate(skoler):
